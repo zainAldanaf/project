@@ -125,6 +125,8 @@
 		BF7A6E9A295250AC00F448C8 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
+				BF77473B295372D70007C748 /* CreateAccount+CoreDataClass.swift */,
+				BF77473C295372D70007C748 /* CreateAccount+CoreDataProperties.swift */,
 				BF77472E29531C8D0007C748 /* OrderData+CoreDataProperties.swift */,
 				BF77472D29531C8D0007C748 /* OrderData+CoreDataClass.swift */,
 			);
@@ -172,8 +174,6 @@
 		BFD2244A2938A53A006E6857 = {
 			isa = PBXGroup;
 			children = (
-				BF77473B295372D70007C748 /* CreateAccount+CoreDataClass.swift */,
-				BF77473C295372D70007C748 /* CreateAccount+CoreDataProperties.swift */,
 				BFD224552938A53A006E6857 /* project */,
 				BFD2246C2938A54A006E6857 /* projectTests */,
 				BFD224762938A54A006E6857 /* projectUITests */,
