@@ -13,7 +13,9 @@ class OrderDetailsViewController: UIViewController {
     @IBOutlet weak var modelLB: UILabel!
     @IBOutlet weak var priceLB: UILabel!
     @IBOutlet weak var cityLB: UILabel!
-  //  var order: Order?
+    
+    var order: Order?
+    
     var img = UIImage()
     var model = ""
     var price = ""

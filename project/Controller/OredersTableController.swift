@@ -11,28 +11,26 @@ class OredersTableController: UIViewController {
 
     @IBOutlet weak var TableView: UITableView!
     
-    var arrOrder=[order]()
-    
-    
+      var order : Order?
+       var arrOrder=[Order]()
     
     override func viewDidLoad() {
-        TableView.delegate=self
-        TableView.dataSource=self
+        TableView.delegate = self
+        TableView.dataSource = self
+        
         TableView.register(UINib(nibName: "TableViewCell", bundle: nil), forCellReuseIdentifier: "TableViewCell")
         super.viewDidLoad()
         
-        arrOrder.append(order(image: UIImage(named:"Image-1")!, name: "villa", place: " dubai ", price: "10000$ "))
-        arrOrder.append(order(image: UIImage(named:"Image-2")!, name: "flat", place: " Abu Dhabi ", price: "2000$ "))
-        arrOrder.append(order(image: UIImage(named:"Image-3")!, name: "building", place: " Gaza ", price: "1000$ "))
-        arrOrder.append(order(image: UIImage(named:"image-5")!, name: "villa", place: " Kuwait ", price: "1600$ "))
-        arrOrder.append(order(image: UIImage(named:"image-4")!, name: "Apartment", place: " Kuwait ", price: "1600$ "))
-        arrOrder.append(order(image: UIImage(named:"image-6")!, name: "villa", place: " Dubi ", price: "9600$ "))
+        arrOrder.append(Order(image: UIImage(named:"Image-1")!, name: "villa", place: " dubai ", price: "10000$ "))
+        arrOrder.append(Order(image: UIImage(named:"Image-2")!, name: "flat", place: " Abu Dhabi ", price: "2000$ "))
+        arrOrder.append(Order(image: UIImage(named:"Image-3")!, name: "building", place: " Gaza ", price: "1000$ "))
+        arrOrder.append(Order(image: UIImage(named:"image-5")!, name: "villa", place: " Kuwait ", price: "1600$ "))
+        arrOrder.append(Order(image: UIImage(named:"image-4")!, name: "Apartment", place: " Kuwait ", price: "1600$ "))
+        arrOrder.append(Order(image: UIImage(named:"image-6")!, name: "villa", place: " Dubi ", price: "9600$ "))
 
     
     }
     
-
-
 }
 
 extension OredersTableController :UITableViewDelegate , UITableViewDataSource{
@@ -45,7 +43,7 @@ extension OredersTableController :UITableViewDelegate , UITableViewDataSource{
         let data = arrOrder[indexPath.row]
         cell.setupCellOrder(imageO: data.image, nameO: data.name, placeO: data.place, priceO: data.price)
        
-//        cell.img.image=UIImage(named:String(indexPath.row + 1))
+ //        cell.img.image=UIImage(named:String(indexPath.row + 1))
 //        cell.name.text="name \(indexPath.row + 1)"
 //        cell.place.text="place \(indexPath.row + 1)"
 //        cell.price.text="price \(indexPath.row )"
@@ -56,19 +54,13 @@ extension OredersTableController :UITableViewDelegate , UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let vc = storyboard?.instantiateViewController(withIdentifier: "OrderDetailsViewController") as? OrderDetailsViewController{
-//            vc.img = UIImage(named: arrOrder[indexPath.row])!
-//            vc.model = arrOrder[indexPath.row]
-//            vc.city = arrOrder[indexPath.row]
-//            vc.price = arrOrder[indexPath.row]
- //           vc.order= arrOrder[indexPath.rpw]
+            vc.order = arrOrder[indexPath.row]
             self.navigationController?.pushViewController(vc, animated: true)
+            
+            //           vc.img = UIImage(named: arrOrder[indexPath.row])!
+            //            vc.model = arrOrder[indexPath.row]
+            //            vc.city = arrOrder[indexPath.row]
+            //            vc.price = arrOrder[indexPath.row]
         }
     }
-    struct order {
-        let image :UIImage
-        let name : String
-        let place :String
-        let price : String
-    }
-    
 }
