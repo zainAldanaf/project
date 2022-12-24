@@ -26,10 +26,9 @@ class CompanyViewController: UIViewController, UICollectionViewDelegate, UIColle
         arrcompany.append(Company(photo: UIImage(named: "Image-3")!, name: "Gulf Sothebys"))
         arrcompany.append(Company(photo: UIImage(named: "image-4")!, name: "Moqawalat"))
         arrcompany.append(Company(photo: UIImage(named: "image-5")!, name: "CBRE Group"))
-    
+        
     }
     
-
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return arrcompany.count
@@ -49,9 +48,18 @@ class CompanyViewController: UIViewController, UICollectionViewDelegate, UIColle
         if let vc = storyboard?.instantiateViewController(withIdentifier: "CompanyViewControllerCell") as? CompanyViewController{
             
             vc.company = arrcompany[indexPath.row]
+            
             self.navigationController?.pushViewController(vc, animated: true)
             
         }
     }
+    
+    
+    
+   
+        
+      
+    
+    
 }
 

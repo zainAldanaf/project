@@ -16,12 +16,10 @@ class ContainerPageVC: UIPageViewController, UIPageViewControllerDelegate, UIPag
         
         let vc1 = self.storyboard?.instantiateViewController(withIdentifier:"page1")
         let vc2 = self.storyboard?.instantiateViewController(withIdentifier:"page2")
-        let vc3 = self.storyboard?.instantiateViewController(withIdentifier:"page3")
         
         
         arrContainers.append(vc1!)
         arrContainers.append(vc2!)
-        arrContainers.append(vc3!)
         
         delegate = self
         dataSource = self

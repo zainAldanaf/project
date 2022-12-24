@@ -11,6 +11,8 @@ import CoreData
 class SIgnController: UIViewController {
 
     
+    @IBOutlet weak var number: UITextField!
+    @IBOutlet weak var name: UITextField!
     @IBOutlet weak var passSign: UITextField!
     @IBOutlet weak var emailSign: UITextField!
     
@@ -24,9 +26,12 @@ class SIgnController: UIViewController {
         
         let userEmail = emailSign.text
         let userPassword = passSign.text
+        let namee = name.text
+        let numberr = number.text
 
-        if (userEmail!.isEmpty || userPassword!.isEmpty){
-            let alert = UIAlertController(title: "error ", message: "user name or password Empty ", preferredStyle: .alert)
+        if (userEmail!.isEmpty || userPassword!.isEmpty || namee!.isEmpty
+            || numberr!.isEmpty ){
+            let alert = UIAlertController(title: "error ", message: "All fields are required! ", preferredStyle: .alert)
             
             alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
             present(alert,animated: true,completion: nil)
@@ -36,9 +41,10 @@ class SIgnController: UIViewController {
                    return
                }
         let context = appDelegate.persistentContainer.viewContext
-        var newUser = NSEntityDescription.insertNewObject(forEntityName: "Users", into: context) as NSManagedObject
-        
-             newUser.setValue(userEmail, forKey: "username")
+        let newUser = NSEntityDescription.insertNewObject(forEntityName: "CreateAccount", into: context) as NSManagedObject
+             
+             newUser.setValue(namee, forKey: "userName")
+             newUser.setValue(userEmail, forKey: "useremail")
              newUser.setValue(userPassword, forKey: "password")
         
         try?context.save()

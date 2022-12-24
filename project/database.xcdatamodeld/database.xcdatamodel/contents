@@ -3,6 +3,10 @@
     <entity name="CreateAccount" representedClassName="CreateAccount" syncable="YES">
         <attribute name="password" optional="YES" attributeType="String"/>
         <attribute name="useremail" optional="YES" attributeType="String"/>
+        <attribute name="userName" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="FavoriteCompany" representedClassName="FavoriteCompany" syncable="YES">
+        <attribute name="companyNameFav" optional="YES" attributeType="String"/>
     </entity>
     <entity name="OrderData" representedClassName="OrderData" syncable="YES">
         <attribute name="area" optional="YES" attributeType="String"/>
@@ -18,7 +22,8 @@
         <attribute name="roomNo" optional="YES" attributeType="String"/>
     </entity>
     <elements>
+        <element name="CreateAccount" positionX="-63" positionY="63" width="128" height="74"/>
+        <element name="FavoriteCompany" positionX="-63" positionY="63" width="128" height="44"/>
         <element name="OrderData" positionX="-63" positionY="-18" width="128" height="194"/>
-        <element name="CreateAccount" positionX="-63" positionY="63" width="128" height="59"/>
     </elements>
 </model>

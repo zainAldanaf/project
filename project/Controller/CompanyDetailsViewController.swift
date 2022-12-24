@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CoreData
 
 class CompanyDetailsViewController: UIViewController {
 
@@ -21,6 +22,17 @@ class CompanyDetailsViewController: UIViewController {
         
         companyPhoto.image = img
         companyName.text = name
-
     }
-}
+    
+    @IBAction func addToFav(_ sender: Any) {
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
+                           return
+        }
+                let context = appDelegate.persistentContainer.viewContext
+                let newFav = NSEntityDescription.insertNewObject(forEntityName: "FavoriteCompany", into: context) as NSManagedObject
+                newFav.setValue(companyName, forKey: "companyNameFav")
+                try?context.save()
+            }
+    }
+
+

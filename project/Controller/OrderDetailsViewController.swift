@@ -20,6 +20,7 @@ class OrderDetailsViewController: UIViewController {
     var model = ""
     var price = ""
     var city = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -30,5 +31,4 @@ class OrderDetailsViewController: UIViewController {
     }
     
 
-    
 }

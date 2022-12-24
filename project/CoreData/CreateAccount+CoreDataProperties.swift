@@ -2,7 +2,7 @@
 //  CreateAccount+CoreDataProperties.swift
 //  project
 //
-//  Created by Zain Aldanaf on 21/12/2022.
+//  Created by Zain Aldanaf on 23/12/2022.
 //
 //
 
@@ -16,8 +16,9 @@ extension CreateAccount {
         return NSFetchRequest<CreateAccount>(entityName: "CreateAccount")
     }
 
-    @NSManaged public var useremail: String?
     @NSManaged public var password: String?
+    @NSManaged public var useremail: String?
+    @NSManaged public var userName: String?
 
 }
 

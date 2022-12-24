@@ -28,7 +28,6 @@ class OredersTableController: UIViewController {
         arrOrder.append(Order(image: UIImage(named:"image-4")!, name: "Apartment", place: " Kuwait ", price: "1600$ "))
         arrOrder.append(Order(image: UIImage(named:"image-6")!, name: "villa", place: " Dubi ", price: "9600$ "))
 
-    
     }
     
 }
@@ -43,12 +42,6 @@ extension OredersTableController :UITableViewDelegate , UITableViewDataSource{
         let data = arrOrder[indexPath.row]
         cell.setupCellOrder(imageO: data.image, nameO: data.name, placeO: data.place, priceO: data.price)
        
- //        cell.img.image=UIImage(named:String(indexPath.row + 1))
-//        cell.name.text="name \(indexPath.row + 1)"
-//        cell.place.text="place \(indexPath.row + 1)"
-//        cell.price.text="price \(indexPath.row )"
-
-        
         return cell
     }
     
@@ -57,10 +50,11 @@ extension OredersTableController :UITableViewDelegate , UITableViewDataSource{
             vc.order = arrOrder[indexPath.row]
             self.navigationController?.pushViewController(vc, animated: true)
             
-            //           vc.img = UIImage(named: arrOrder[indexPath.row])!
-            //            vc.model = arrOrder[indexPath.row]
-            //            vc.city = arrOrder[indexPath.row]
-            //            vc.price = arrOrder[indexPath.row]
+            
+//                        vc.img = UIImage(named: arrOrder[indexPath.row])!
+//                        vc.model = arrOrder[indexPath.row]
+//                        vc.city = arrOrder[indexPath.row]
+//                        vc.price = arrOrder[indexPath.row]
         }
     }
 }

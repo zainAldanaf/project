@@ -40,12 +40,15 @@ class MakeOrderController: UIViewController {
     @IBOutlet weak var addName: UITextField!
     @IBOutlet weak var addCity: UITextField!
     @IBOutlet weak var addPrice: UITextField!
+    @IBOutlet weak var cillinghight: UITextField!
+    @IBOutlet weak var roomno: UITextField!
+    @IBOutlet weak var floorno: UITextField!
+    @IBOutlet weak var buildingarea: UITextField!
+    @IBOutlet weak var companyname: UITextField!
+    @IBOutlet weak var area: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // access persistent container and manage object context
-        //(UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     }
     
     @IBAction func addOrder(_ sender: Any) {
@@ -54,21 +57,33 @@ class MakeOrderController: UIViewController {
                }
             let context = appDelegate.persistentContainer.viewContext
             func addNewOrder(rooms: String , price : String , photo:UIImage
-              ,name: String , map:String , floor:String ,company:String , city:String , cillingHight:  String , space:String, area:String){
+              ,name: String , map:String , floor:String ,company:String , city:String , cillingHight:  String , space:String, areaa:String){
         
                 let newOrder = NSEntityDescription.insertNewObject(forEntityName: "OrderData", into: context) as! OrderData
         
-                newOrder.roomNo = rooms
-                newOrder.price = price
-                newOrder.photo = photo.pngData()
-                newOrder.name = name
-                newOrder.map = map
-                newOrder.floorNo = floor
-                newOrder.company = company
-                newOrder.city = city
-                newOrder.cillingHight = cillingHight
-                newOrder.buildingSpace = space
-                newOrder.area = area
+                
+                newOrder.setValue(addName, forKey: "name")
+                newOrder.setValue(roomno, forKey: "roomNo")
+                newOrder.setValue(addCity, forKey: "city")
+                newOrder.setValue(addPrice, forKey: "price")
+                newOrder.setValue(cillinghight, forKey: "cillingHieght")
+                newOrder.setValue(floorno, forKey: "floorNo")
+                newOrder.setValue(buildingarea, forKey: "buildingSpace")
+                newOrder.setValue(companyname, forKey: "company")
+                newOrder.setValue(area, forKey: "area")
+                
+                
+//                newOrder.roomNo = rooms
+//                newOrder.price = price
+//                newOrder.photo = photo.pngData()
+//                newOrder.name = name
+//                newOrder.map = map
+//                newOrder.floorNo = floor
+//                newOrder.company = company
+//                newOrder.city = city
+//                newOrder.cillingHight = cillingHight
+//                newOrder.buildingSpace = space
+//                newOrder.area = area
         
                 try? context.save()
            
